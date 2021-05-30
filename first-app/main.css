@@ -10,3 +10,15 @@ input[type='text'] {
 [v-cloak] {
     display: none;
 }
+
+li {
+    font-size: 18px;
+}
+
+li a:link {
+    text-decoration: none;
+}
+
+li a:hover {
+    color: rgb(87, 23, 76);
+}
