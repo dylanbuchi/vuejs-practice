@@ -1,2 +1,3 @@
 # vuejs-practice
-Repo to practice VueJS 
+
+Repo to practice VueJS
