@@ -4,6 +4,7 @@ const vm = Vue.createApp({
             firstName: 'Dylan',
             lastName: 'Buchi',
             googleURL: 'https://google.com',
+            bingRawURL: '<a href="https://bing.com" target="_blank">Bing</a>',
         };
     },
     methods: {
