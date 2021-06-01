@@ -5,14 +5,37 @@
         <link rel="stylesheet" type="text/css" href="./main.css" />
     </head>
     <body>
+        <!-- vueJS main app -->
         <div id="app" v-cloak>
+            <!-- fullName -->
             <p>{{`${fullName()}`}}</p>
             <hr />
+
+            <!-- firstName -->
             <label>First Name</label>
             <input type="text" v-model="firstName" />
+            <!-- lastName -->
+
+            <!-- Using vueJS binding to update the lastName data -->
             <label>Last Name</label>
-            <input type="text" v-model="lastName" />
+
+            <!-- add $event if adding more arguments-->
+
+            <input
+                type="text"
+                :value="lastName"
+                @input.prevent="updateLastName($event, 'Updating Last Name')"
+            />
+
+            <!-- Age -->
+            <p>Age: {{age}}</p>
+            <!-- (+ -) buttons -->
+            <button type="button" v-on:click="incrementAge">+</button>
+
+            <!-- shorthand way for VueJS to listen to events is @ -->
+            <button type="button" @click="decrementAge">-</button>
             <hr />
+            <!-- Links -->
             <ul>
                 <li>
                     <p><a :href="googleURL" target="_blank">Google</a></p>
@@ -22,6 +45,7 @@
                 </li>
             </ul>
         </div>
+        <!-- scripts -->
         <script src="https://unpkg.com/vue@next"></script>
         <script src="./app.js"></script>
     </body>
