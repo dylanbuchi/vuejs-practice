@@ -22,3 +22,7 @@ li a:link {
 li a:hover {
     color: rgb(87, 23, 76);
 }
+
+button {
+    margin: 10px;
+}
