@@ -8,14 +8,23 @@
         <!-- vueJS main app -->
         <div id="app" v-cloak>
             <!-- fullName -->
-            <p>{{`${fullName()}`}}</p>
+            <p>{{`${fullName()}`}}, {{age}} years old</p>
+
             <hr />
 
             <!-- firstName -->
             <label>First Name</label>
-            <input type="text" v-model="firstName" />
-            <!-- lastName -->
+            <input type="text" v-model.lazy.trim="firstName" />
 
+            <!-- middleName -->
+            <!-- update the middleName whe pressing enter -->
+            <label>Middle Name</label>
+            <input
+                type="text"
+                :value="middleName"
+                @keyup.enter="updateMiddleName"
+            />
+            <!-- lastName -->
             <!-- Using vueJS binding to update the lastName data -->
             <label>Last Name</label>
 
@@ -26,9 +35,10 @@
                 :value="lastName"
                 @input.prevent="updateLastName($event, 'Updating Last Name')"
             />
-
             <!-- Age -->
-            <p>Age: {{age}}</p>
+            <label>Age </label>
+            <input type="number" v-model.number="age" />
+
             <!-- (+ -) buttons -->
             <button type="button" v-on:click="incrementAge">+</button>
 
